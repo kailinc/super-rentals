@@ -10,3 +10,4 @@ Router.map(function() {
 });
 
 export default Router;
+// makes router defined in other parts of application
