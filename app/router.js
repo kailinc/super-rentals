@@ -6,7 +6,13 @@ const Router = Ember.Router.extend({
   rootURL: config.rootURL
 });
 
+
+// this route will map the about route handler
+// loads the about.hbs template
 Router.map(function() {
+  this.route('about');
+  this.route('contact');
+  this.route('rentals');
 });
 
 export default Router;
