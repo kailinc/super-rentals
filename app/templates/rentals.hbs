@@ -7,6 +7,13 @@
   {{/link-to}}
 </div>
 
-{{#each model as |rentalUnit|}}
-  {{rental-listing rental=rentalUnit}}
-{{/each}}
+{{!-- set up filtering mechanism to filter by city--}}
+{{#list-filter filter=(action 'filterByCity') as |rentals|}}
+  <ul class="results">
+    {{!-- for each result, well call it rentalUnit --}}
+    {{#each rentals as |rentalUnit|}}
+    {{!-- use rental-listing template (componenet) to render the data on to the screen --}}
+      <li>{{rental-listing rental=rentalUnit}}</li>
+    {{/each}}
+  </ul>
+{{/list-filter}}
